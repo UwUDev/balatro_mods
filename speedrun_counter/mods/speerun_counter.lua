@@ -85,7 +85,7 @@ table.insert(mods,
                 end
                 ]]
 
-                injectHead("game.lua", "Game:start_run", patch)
+                injectHead("game.lua", "Game:start_run", patch:gsub("([^%w])", "%%%1"))
             end,
             on_post_render = function()
                 if G.STAGE == G.STAGES.MAIN_MENU then
