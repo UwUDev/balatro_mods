@@ -69,7 +69,7 @@ table.insert(mods,
         {
             mod_id = "speedrun_counter",
             name = "Speedrun Counter",
-            version = "0.1",
+            version = "0.2",
             author = "UwUdev",
             description = {
                 "A simple speedrun counter",
@@ -85,7 +85,7 @@ table.insert(mods,
                 end
                 ]]
 
-                injectHead("game.lua", "Game:start_run", patch:gsub("([^%w])", "%%%1"))
+                injectHead("game.lua", "Game:start_run", patch)
             end,
             on_post_render = function()
                 if G.STAGE == G.STAGES.MAIN_MENU then
